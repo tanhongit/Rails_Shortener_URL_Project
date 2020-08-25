@@ -1,2 +1,0 @@
-class LinkController < ApplicationController
-end
