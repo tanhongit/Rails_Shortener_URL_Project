@@ -42,4 +42,14 @@ check info create link:
     > @link.persisted?
     > @link.errors
 
+Part 7. 
+
+$ irb 
+> URI
+> URI.parse("https://www.google.com")
+> uri = _
+uri.domain
+uri.public_methods(false).sort
+uri.host
+URI.parse "resgregergre"
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w

@@ -32,7 +32,7 @@ RSpec.describe Shortener do
     # end
 
     it "generates a Link record with a unique lookup code" do 
-        url = "https://www.favoritewebsite.com/articles/how-to-cook"
+        url = "https://tanhongit.com/"
         shortener = Shortener.new(url)
         link = shortener.generate_short_link
         expect(link.valid?).to be(true) 
