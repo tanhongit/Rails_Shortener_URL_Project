@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'digest/sha2'
 
 RSpec.describe Shortener do
     it "shortens a given URL to a 7 character lookup code" do

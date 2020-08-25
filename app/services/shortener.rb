@@ -15,6 +15,6 @@ class Shortener
         # end
         # string
 
-        Digest::SHA256.hexdigest(url)[0...6]
+        Digest::SHA256.hexdigest(url)[0...7]
     end
 end
