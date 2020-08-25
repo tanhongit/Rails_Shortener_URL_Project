@@ -7,5 +7,7 @@ RSpec.describe "Link redirection", type: :request do
         link = shortener.generate_short_link
 
         get link.shortened_url
+
+        expect(response).to redirect_to(link.original_url) 
     end
 end
