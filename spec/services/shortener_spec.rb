@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'digest/sha2'
 
 RSpec.describe Shortener do
     it "shortens a given URL to a 7 character lookup code" do
@@ -27,5 +28,7 @@ RSpec.describe Shortener do
         url = "https://www.favoritewebsite.com/articles/how-to-cook"
         shortener = Shortener.new(url)
         second_code = shortener.lookup_code
+
+        expect(first_code).to eq(second_code)
     end
 end

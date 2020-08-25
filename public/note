@@ -7,3 +7,9 @@ $ irb
 > rand
 > (rand * 3)
 > (rand * 3).round
+
+-------------------------
+
+**run test generate the hash of the string
+$ irb 
+> Digest::Sha256
