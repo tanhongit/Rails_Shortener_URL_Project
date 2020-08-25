@@ -27,6 +27,7 @@ class Shortener
         # 4. if not, get anoder code
         i = 0
         loop do
+            # 1. get a lookup code
             # # way 1
             # code = Digest::SHA256.hexdigest(url)[i...(i+7)]
 
@@ -36,6 +37,7 @@ class Shortener
             # # way 3: re-establish
             code = get_fresh_code(i)
             
+            # 2,3,4. check if it already exists
             # # way 1
             # if link_model.exists?(lookup_code: code)
             # else
@@ -48,6 +50,8 @@ class Shortener
             i = i + 1
         end
     end
+
+    private
 
     def get_fresh_code(iterator)
         Digest::SHA256.hexdigest(url)[iterator..(iterator+6)]
