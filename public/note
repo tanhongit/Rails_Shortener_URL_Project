@@ -12,4 +12,11 @@ $ irb
 
 **run test generate the hash of the string
 $ irb 
-> Digest::Sha256
+> Digest::SHA256.hexdigest('hello')
+
+Part 2.
+
+rails g model Link lookup_code:string original_url:string
+rails db:migrate
+rails db:migrate RAILS_ENV=test
+
