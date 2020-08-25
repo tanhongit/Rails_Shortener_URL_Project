@@ -29,9 +29,12 @@ class Shortener
         loop do
             # # way 1
             # code = Digest::SHA256.hexdigest(url)[i...(i+7)]
-            
+
             # # way 2
-            code = Digest::SHA256.hexdigest(url)[i..(i+6)]
+            # code = Digest::SHA256.hexdigest(url)[i..(i+6)]
+
+            # # way 3: re-establish
+            code = get_fresh_code(i)
             
             # # way 1
             # if link_model.exists?(lookup_code: code)
@@ -41,9 +44,12 @@ class Shortener
 
             # # way 2
             break code unless link_model.exists?(lookup_code: code)
-            # i++    -> bug
+            # if use i++    -> bug
             i = i + 1
         end
-        
     end
+
+    def get_fresh_code(iterator)
+        Digest::SHA256.hexdigest(url)[iterator..(iterator+6)]
+    end    
 end
