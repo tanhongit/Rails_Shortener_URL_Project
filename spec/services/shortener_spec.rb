@@ -27,4 +27,5 @@ RSpec.describe Shortener do
         url = "https://www.favoritewebsite.com/articles/how-to-cook"
         shortener = Shortener.new(url)
         second_code = shortener.lookup_code
+    end
 end
