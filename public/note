@@ -29,4 +29,8 @@ $ rails c
 > SecureRandom
 > SecureRandom.uuid
 
+Part 6.
+
+rails g controller Home index
+
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
