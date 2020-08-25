@@ -48,8 +48,11 @@ $ irb
 > URI
 > URI.parse("https://www.google.com")
 > uri = _
-uri.domain
-uri.public_methods(false).sort
-uri.host
-URI.parse "resgregergre"
+> uri.domain
+> uri.public_methods(false).sort
+> uri.host
+> URI.parse "resgregergre"
+
+
+--------------------------------------------------------
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
