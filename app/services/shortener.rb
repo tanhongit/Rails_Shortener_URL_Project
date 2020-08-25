@@ -25,7 +25,8 @@ class Shortener
         # 2. check if it already exists
         # 3. break out of the loop if it does not exists
         # 4. if not, get anoder code
-        i = 0
+
+        # i = 0
         loop do
             # 1. get a lookup code
             # # way 1
@@ -35,7 +36,8 @@ class Shortener
             # code = Digest::SHA256.hexdigest(url)[i..(i+6)]
 
             # # way 3: re-establish
-            code = get_fresh_code(i)
+            # code = get_fresh_code(i)
+            # code = get_fresh_code
             
             # 2,3,4. check if it already exists
             # # way 1
@@ -45,7 +47,8 @@ class Shortener
             # end
 
             # # way 2
-            break code unless link_model.exists?(lookup_code: code)
+            # break code unless link_model.exists?(lookup_code: code)
+            break get_fresh_code unless link_model.exists?(lookup_code: get_fresh_code)
             # if use i++    -> bug
             i = i + 1
         end
@@ -53,7 +56,10 @@ class Shortener
 
     private
 
-    def get_fresh_code(iterator)
-        Digest::SHA256.hexdigest(url)[iterator..(iterator+6)]
-    end    
+    # def get_fresh_code(iterator)
+    #     Digest::SHA256.hexdigest(url)[iterator..(iterator+6)]
+    # end 
+    def get_fresh_code
+        SecureRandom.uuid[0..6]
+    end      
 end

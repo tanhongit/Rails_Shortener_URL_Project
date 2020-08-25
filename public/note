@@ -23,4 +23,10 @@ rails g model Link lookup_code:string original_url:string
 rails db:migrate
 rails db:migrate RAILS_ENV=test
 
+Part 3.
+
+$ rails c
+> SecureRandom
+> SecureRandom.uuid
+
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
