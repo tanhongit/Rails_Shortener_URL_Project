@@ -13,6 +13,10 @@ class LinksController < ApplicationController
         end
     end
 
+    def show
+        head :ok
+    end
+
     private
 
     def links_params
