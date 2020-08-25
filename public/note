@@ -1,3 +1,6 @@
+TEST: 
+$ rspec
+
 Part 1.
 
 rails g rspec:install 
