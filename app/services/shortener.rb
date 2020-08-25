@@ -21,6 +21,25 @@ class Shortener
         # end
         # string
 
-        Digest::SHA256.hexdigest(url)[0...7]
+        # 1. get a lookup code
+        # 2. check if it already exists
+        # 3. break out of the loop if it does not exists
+        # 4. if not, get anoder code
+        i = 0
+        loop do
+            Digest::SHA256.hexdigest(url)[i..(i+7)]
+
+            # # way 1
+            # if link_model.exists?(lookup_code: code)
+            # else
+            #     break code
+            # end
+
+            # # way 2
+            break code unless link_model.exists?(lookup_code: code)
+            # i++    -> bug
+            i = i + 1
+        end
+        
     end
 end
