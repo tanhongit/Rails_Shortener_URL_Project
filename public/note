@@ -33,4 +33,13 @@ Part 6.
 
 rails g controller Home index
 
+check info create link:
+    add "binding.pry" to create method of link controller
+    run $ rails s
+    add new link for form and click submit
+    go back terminal at rails s, press enter 
+    > @link
+    > @link.persisted?
+    > @link.errors
+
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
