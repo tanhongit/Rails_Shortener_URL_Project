@@ -5,6 +5,12 @@ class LinksController < ApplicationController
         @link = shortener.generate_short_link
         # # check info create link
         # binding.pry
+
+        if @link.persisted?
+            respond_to :js
+        else
+            render 'error.js.erb'
+        end
     end
 
     private
