@@ -74,6 +74,7 @@ You must change the username, password and database name accordingly!
 ```
 $ rails db:migrate
 $ rails db:migrate RAILS_ENV=development
+$ rails db:migrate RAILS_ENV=test
 ```
 
 ### 4.6. Run server 
