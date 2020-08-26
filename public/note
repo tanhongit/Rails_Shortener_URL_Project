@@ -53,6 +53,10 @@ $ irb
 > uri.host
 > URI.parse "resgregergre"
 
+Part 10.
 
+rails g devise:install
+rails g devise User
+rails g devise:views
 --------------------------------------------------------
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
