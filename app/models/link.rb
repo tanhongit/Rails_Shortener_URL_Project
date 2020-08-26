@@ -19,6 +19,6 @@ class Link < ApplicationRecord
     end
 
     def shortened_url
-        "http://localhost:3000/#{lookup_code}"
+        "https://shortener-rails.herokuapp.com/#{lookup_code}"
     end
 end
