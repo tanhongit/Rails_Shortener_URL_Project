@@ -1,8 +1,10 @@
 var lookupCode = "<%= @link.lookup_code %>";
 console.log(lookupCode);
-
-var shortLink = "http://localhost:3000/" + lookupCode;
+var shortened_url = "<%=@link.shortened_url%>";
+console.log(shortened_url);
+<%# var shortLink = "http://localhost:3000/" + lookupCode; %>
 
 var element = document.getElementById('short-link');
+
 <%# element.innerHTML = shortLink; %>
 element.innerHTML = "<%= @link.shortened_url %>"
