@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  #  get username from email
+  def username
+    # dean@example.com -> ['dean', 'example.com].first -> dean.capitalize -> Dean
+    email.split('@')[0].capitalize
+  end
 end
