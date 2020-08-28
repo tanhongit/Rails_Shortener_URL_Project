@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   post "/links" => 'links#create'
 
   get "/:lookup_code" => "links#show"
+
+  get "/user/admin" => 'admin#index'
+
 end

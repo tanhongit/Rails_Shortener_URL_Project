@@ -8,6 +8,11 @@
       <li class="nav-item <%= active(root_path)%>">
         <%= link_to "Home", root_path, class:'nav-link' %>
       </li>
+      <%- if current_user && current_user.admin? %>
+        <li class="nav-item <%= active(user_admin_path) %>">
+          <%= link_to 'Admin', user_admin_path, class:'nav-link' %>
+        </li>
+      <% end %>
     </ul>
     <ul class="navbar-nav ml-auto">
       <% if current_user %>
