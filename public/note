@@ -59,5 +59,11 @@ rails g devise:install
 rails g devise User
 rails g devise:views
 rails db:migrate
+
+Part 11.
+
+rails g cancan:ability
+rails db:migrate RAILS_ENV=test
+
 --------------------------------------------------------
 https://www.youtube.com/channel/UCaT8uPGUYbdRsjm4cJy1D7w
