@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get "/:lookup_code" => "links#show"
 
   get "/user/admin" => 'admin#index'
-  get "/user/admin/allusers" => 'admin#allusers'
+  get "/user/admin/allusers" => 'users#allusers'
 end

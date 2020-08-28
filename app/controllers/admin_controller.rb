@@ -1,9 +1,7 @@
 class AdminController < ApplicationController
+
     def index
-        @users = User.ordered
+        authorize! :manage, nil
     end
 
-    def allusers
-        @users = User.all
-    end
 end
