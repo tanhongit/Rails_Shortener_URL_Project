@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  scope :ordered, -> { order('created_at desc') }
   #  get username from email
   def username
     # dean@example.com -> ['dean', 'example.com].first -> dean.capitalize -> Dean
