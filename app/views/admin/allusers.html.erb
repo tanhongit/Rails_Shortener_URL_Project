@@ -1,34 +1,33 @@
-<h2 class='pull-left'>Admin</h2>
+<h1 style="text-align:center; padding: 30px;" class='pull-left'>Admin Manager</h1>
 <%= render 'admin/shared/nav' %>
 <div class='clearfix'></div>
 <hr>
-<div class="row">
-  <div class="col-md-6">
-    <!--Will show tables with the last changes for each model -->
-    <h2 class='pull-left'>Users</h2>
-    <hr>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        All Users
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!--Will show tables with the last changes for each model -->
+      <h2 class='pull-left'>All Users</h2>
+      <hr>
+      <div class="panel panel-primary">
+        <table class="table">
+          <thead class="thead-dark">
+            <th>ID</th>
+            <th>Email</th>
+            <th>Signed Up</th>
+            <th>Admin?</th>
+          </thead>
+          <tbody>
+            <%- @users.ordered.each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.created_at.strftime("%d %b. %Y") %></td>
+                <td><%= user.admin? %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-      <table class="table">
-        <thead>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Signed Up</th>
-          <th>Admin?</th>
-        </thead>
-        <tbody>
-          <%- @users.ordered.each do |user| %>
-            <tr>
-              <td><%= user.id %></td>
-              <td><%= user.email %></td>
-              <td><%= user.created_at.strftime("%d %b. %Y") %></td>
-              <td><%= user.admin? %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
     </div>
   </div>
 </div>

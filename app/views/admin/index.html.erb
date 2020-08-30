@@ -1,31 +1,34 @@
-<h2 class='pull-left'>Admin</h2>
+<h1 style="text-align:center; padding: 30px;" class='pull-left'>Admin Manager</h1>
 <%= render 'admin/shared/nav' %>
 <div class='clearfix'></div>
 <hr>
-<div class="row">
-  <div class="col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        Last 3 Users
-      </div>
-      <table class="table">
-        <thead>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Signed Up</th>
-        </thead>
-        <tbody>
-          <%- User.ordered.limit(3).each do |user| %>
-            <tr>
-              <td><%= user.id %></td>
-              <td><%= user.email %></td>
-              <td><%= user.created_at.strftime("%d %b. %Y") %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <div class="panel-body text-center">
-        <%= link_to '...', user_admin_allusers_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <h2 class='pull-left'>
+          Last 3 Users
+        </h2>
+        <hr>
+        <table class="table">
+          <thead class="thead-dark">
+            <th>ID</th>
+            <th>Email</th>
+            <th>Signed Up</th>
+          </thead>
+          <tbody>
+            <%- User.ordered.limit(3).each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.created_at.strftime("%d %b. %Y") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="panel-body text-center">
+          <%= link_to 'See all...', user_admin_allusers_path %>
+        </div>
       </div>
     </div>
   </div>
