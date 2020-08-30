@@ -12,14 +12,14 @@
         <hr>
         <table class="table">
           <thead class="thead-dark">
-            <th>ID</th>
-            <th>Email</th>
-            <th>Signed Up</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Signed Up</th>
           </thead>
           <tbody>
             <%- User.ordered.limit(3).each do |user| %>
               <tr>
-                <td><%= user.id %></td>
+                <th scope="row"><%= user.id %></th>
                 <td><%= user.email %></td>
                 <td><%= user.created_at.strftime("%d %b. %Y") %></td>
               </tr>

@@ -1,13 +1,8 @@
-<ul class="nav nav-pills navbar-right">
-  <li role="presentation" class="<%= active(user_admin_path) %>">
-    <%= link_to 'Dashboard', user_admin_path %>
-  </li>
-  <li role="presentation" data-samurai-hook='admin_nav'
-      class="<%= active(user_admin_path) %>">
-    <%= link_to user_admin_allusers_path do %>
-      Users
-      <span class="badge"><%= User.count %></span>
-    <% end %>
-  </li>
-</ul>
+<div class="container">
+  <%= link_to 'Dashboard', user_admin_path, class: active_admin(user_admin_path)%>
+  <%= link_to user_admin_allusers_path, class: active_admin(user_admin_allusers_path) do %>
+    Users
+    <span class="badge badge-dark"><%= User.count %></span>
+  <% end %>
+</div>
 <div class='clearfix'></div>

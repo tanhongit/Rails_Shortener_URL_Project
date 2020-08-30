@@ -10,7 +10,10 @@
       </li>
       <%- if current_user && current_user.admin? %>
         <li class="nav-item <%= active(user_admin_path) %>">
-          <%= link_to 'Admin', user_admin_path, class:'nav-link' %>
+          <%= link_to 'Admin Manager', user_admin_path, class:'nav-link' %>
+        </li>
+        <li class="nav-item <%= active(user_admin_allusers_path) %>">
+          <%= link_to 'Users Manager', user_admin_allusers_path, class:'nav-link' %>
         </li>
       <% end %>
     </ul>

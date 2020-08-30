@@ -11,15 +11,15 @@
       <div class="panel panel-primary">
         <table class="table">
           <thead class="thead-dark">
-            <th>ID</th>
-            <th>Email</th>
-            <th>Signed Up</th>
-            <th>Admin?</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Signed Up</th>
+            <th scope="col">Admin?</th>
           </thead>
           <tbody>
             <%- @users.ordered.each do |user| %>
               <tr>
-                <td><%= user.id %></td>
+                <th scope="row"><%= user.id %></th>
                 <td><%= user.email %></td>
                 <td><%= user.created_at.strftime("%d %b. %Y") %></td>
                 <td><%= user.admin? %></td>
