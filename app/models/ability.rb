@@ -30,7 +30,7 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     def initialize(user)
-      if user.admin?
+      if user && user.admin?
         can :manage, :all
       else
         can :read, :home
