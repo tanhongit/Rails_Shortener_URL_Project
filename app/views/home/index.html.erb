@@ -1,14 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
-      <h1>URL Shortener</h1>
-      <h2>Simplify your links, track &amp; manage them</h2>
-      <div id="orig" class="url_area">
-        <%= form_with model: @link, remote: true do |form|%>
-          <%= form.text_field :original_url%>
-          <%= form.submit %>
-        <% end%>
-      </div>
+      <header>
+        <div id="logo"><%= link_to "URL Shortener", root_path, class:'logo' %></div>
+      </header>
+      <main>
+        <section id="urlbox">
+          <h1>Simplify your links, track &amp; manage them</h1>
+          <%= form_with model: @link, remote: true do |form|%>
+            <div id="formurl">
+              <%= form.text_field :original_url, placeholder: "Enter the link here... "%>
+              <div id="formbutton">
+                <%= form.submit %>
+              </div>
+            </div>
+          <% end%>
+          <p class="boxtextcenter">URL Shortener is a free tool to shorten a URL or reduce a link.<br>
+            Use our URL Shortener to create a shortened link making it easy to remember.</p>
+        </section>
+        <section id="urlbox">
+          <div id="short-link">
+          </div>
+        </section>
+      </main>
     </div>
   </div>
 </div>
