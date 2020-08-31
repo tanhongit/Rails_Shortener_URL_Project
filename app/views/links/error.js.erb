@@ -1,4 +1,6 @@
 var message = "<%= @link.errors.full_messages.join(". ") << '.'%>";
 var element = document.getElementById('short-link');
 element.style.display = "block";
-element.innerHTML = message;
+element.style.color = "red";
+element.style.fontWeight = "500";
+element.innerHTML = "Error: " + message;

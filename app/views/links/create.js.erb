@@ -10,12 +10,26 @@ element.innerHTML = `
 <h1>The link has been shortened</h1>
 <div id="formurl">
   <div class="row">
-    <div class="col-md-9">
-      <input onClick="this.select();" type="text" value="<%= @link.shortened_url %>"/>
+    <div class="col-md-10">
+      <input id="myInput" onClick="this.select();" type="text" value="<%= @link.shortened_url %>"/>
     </div>
-    <div class="col-md-3">
-      <button>Copy Link</button>
+    <div class="col-md-2">
+      <button id="button-copy" onclick="myFunction()">Copy Link</button>
     </div>
   </div>
 </div>
 `
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
