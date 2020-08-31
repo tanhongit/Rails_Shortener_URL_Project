@@ -3,8 +3,19 @@ console.log(lookupCode);
 var shortened_url = "<%=@link.shortened_url%>";
 console.log(shortened_url);
 <%# var shortLink = "http://localhost:3000/" + lookupCode; %>
-
 var element = document.getElementById('short-link');
-
 <%# element.innerHTML = shortLink; %>
-element.innerHTML = "<%= @link.shortened_url %>"
+element.style.display = "block";
+element.innerHTML = `
+<h1>The link has been shortened</h1>
+<div id="formurl">
+  <div class="row">
+    <div class="col-md-9">
+      <input onClick="this.select();" type="text" value="<%= @link.shortened_url %>"/>
+    </div>
+    <div class="col-md-3">
+      <button>Copy Link</button>
+    </div>
+  </div>
+</div>
+`
