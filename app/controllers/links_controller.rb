@@ -18,6 +18,11 @@ class LinksController < ApplicationController
         redirect_to link.original_url
     end
 
+    def alllinks
+        authorize! :manage, nil
+        @links = Link.ordered
+    end
+
     private
 
     def links_params

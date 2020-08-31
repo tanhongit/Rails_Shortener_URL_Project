@@ -1,0 +1,31 @@
+<h1 style="text-align:center; padding: 30px;" class='pull-left'>Admin Manager</h1>
+<%= render 'admin/shared/nav' %>
+<div class='clearfix'></div>
+<hr>
+  <div class="row">
+    <div class="col-md-12">
+      <!--Will show tables with the last changes for each model -->
+      <h2 class='pull-left'>All Links</h2>
+      <hr>
+      <div class="panel panel-primary">
+        <table class="table">
+          <thead class="thead-dark">
+            <th scope="col">ID</th>
+            <th scope="col">Long Link</th>
+            <th scope="col">Shortener Link</th>
+            <th scope="col">Time</th>
+          </thead>
+          <tbody>
+            <%- @links.ordered.each do |link| %>
+              <tr>
+                <th scope="row"><%= link.id %></th>
+                <td><%= link.original_url %></td>
+                <td><%= link.lookup_code %></td>
+                <td><%= link.created_at.strftime("%d %b. %Y") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

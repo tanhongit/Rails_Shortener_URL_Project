@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get "/user/admin" => 'admin#index'
   get "/user/admin/allusers" => 'users#allusers'
+  get "/user/admin/alllinks" => 'links#alllinks'
 end

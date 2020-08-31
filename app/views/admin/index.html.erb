@@ -31,5 +31,34 @@
         </div>
       </div>
     </div>
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <h2 class='pull-left'>
+          Last 10 Links
+        </h2>
+        <hr>
+        <table class="table">
+          <thead class="thead-dark">
+            <th scope="col">ID</th>
+            <th scope="col">Long Link</th>
+            <th scope="col">Shortener Link</th>
+            <th scope="col">Time</th>
+          </thead>
+          <tbody>
+            <%- Link.ordered.limit(10).each do |link| %>
+              <tr>
+                <th scope="row"><%= link.id %></th>
+                <td><%= link.original_url %></td>
+                <td><%= link.lookup_code %></td>
+                <td><%= link.created_at.strftime("%d %b. %Y") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="panel-body text-center">
+          <%= link_to 'See all...', user_admin_alllinks_path %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

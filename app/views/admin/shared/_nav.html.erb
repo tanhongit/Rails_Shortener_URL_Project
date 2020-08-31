@@ -4,5 +4,9 @@
     Users
     <span class="badge badge-dark"><%= User.count %></span>
   <% end %>
+  <%= link_to user_admin_alllinks_path, class: active_admin(user_admin_alllinks_path) do %>
+    Links
+    <span class="badge badge-dark"><%= Link.count %></span>
+  <% end %>
 </div>
 <div class='clearfix'></div>
