@@ -57,5 +57,6 @@ gem 'devise'
 gem 'simple_form'
 gem 'cancan'
 
+# qr code
 gem 'barby'
 gem 'rqrcode'
