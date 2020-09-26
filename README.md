@@ -2,6 +2,8 @@
 
 We build a **_Link Shortener Web Application_** in Ruby on Rails 6.
 
+URL Shortener is a free tool to shorten a URL or reduce a link and making it easy to remember.
+
 # 1. Technology
 - Ruby on Rails
 
