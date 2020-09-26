@@ -7,7 +7,7 @@ We build a **_Link Shortener Web Application_** in Ruby on Rails 6.
 
 # 2. Configuration requirements
 We are going to build the web application using:
-- Rails 6.0.3.2
+- Rails 6.0.3.3
 - Ruby 2.7.1
 
 # 4. Runing
@@ -84,3 +84,7 @@ $ rails s
 ```
 
 Now, go to http://localhost:3000/
+
+# Demo Image:
+
+![Image](https://imgur.com/sxubPUb.png)
